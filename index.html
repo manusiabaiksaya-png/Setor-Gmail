@@ -1,497 +1,221 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Setor Gmail Premium</title>
+export default function SetorGmailDashboard() { return ( <div className="min-h-screen bg-black text-white flex overflow-hidden"> {/* Sidebar */} <aside className="w-72 bg-zinc-950 border-r border-white/10 p-6 hidden md:flex flex-col justify-between"> <div> <div className="mb-10"> <h1 className="text-3xl font-black text-green-400 tracking-wide"> Setor Gmail </h1> <p className="text-zinc-400 mt-2 text-sm"> Premium Freelance Dashboard </p> </div>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<nav className="space-y-3">
+        <div className="bg-green-500/20 border border-green-400/20 text-green-400 px-4 py-3 rounded-2xl font-semibold">
+          🏠 Dashboard
+        </div>
 
-<style>
+        <div className="hover:bg-white/5 transition-all px-4 py-3 rounded-2xl text-zinc-300">
+          💰 Saldo User
+        </div>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
+        <div className="hover:bg-white/5 transition-all px-4 py-3 rounded-2xl text-zinc-300">
+          📥 Withdraw
+        </div>
 
-body{
-background:#050505;
-color:white;
-overflow-x:hidden;
-}
+        <div className="hover:bg-white/5 transition-all px-4 py-3 rounded-2xl text-zinc-300">
+          📧 Setor Gmail
+        </div>
 
-body::before{
-content:'';
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at top left,#00ff8840,transparent 30%),
-radial-gradient(circle at bottom right,#00ffcc30,transparent 30%),
-radial-gradient(circle at center,#00ff8820,transparent 40%);
-z-index:-1;
-animation:bgMove 10s infinite alternate;
-}
+        <div className="hover:bg-white/5 transition-all px-4 py-3 rounded-2xl text-zinc-300">
+          📊 Statistik
+        </div>
 
-@keyframes bgMove{
-0%{transform:scale(1);}
-100%{transform:scale(1.1);}
-}
+        <div className="hover:bg-white/5 transition-all px-4 py-3 rounded-2xl text-zinc-300">
+          ⚙ Pengaturan
+        </div>
+      </nav>
+    </div>
 
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-backdrop-filter:blur(14px);
-background:rgba(0,0,0,0.3);
-border-bottom:1px solid rgba(255,255,255,0.08);
-z-index:999;
-}
+    <div className="bg-white/5 border border-white/10 rounded-3xl p-5">
+      <p className="text-zinc-400 text-sm mb-2">Support WhatsApp</p>
+      <a
+        href="https://wa.me/628137901248"
+        target="_blank"
+        className="bg-green-500 hover:bg-green-400 transition-all text-black font-bold rounded-2xl py-3 px-5 inline-block w-full text-center"
+      >
+        Hubungi Admin
+      </a>
+    </div>
+  </aside>
 
-.logo{
-font-size:32px;
-font-weight:800;
-color:#00ff88;
-text-shadow:0 0 15px #00ff88;
-}
+  {/* Main */}
+  <main className="flex-1 overflow-y-auto">
+    {/* Topbar */}
+    <header className="border-b border-white/10 backdrop-blur-xl bg-black/40 sticky top-0 z-20 px-6 md:px-10 py-5 flex items-center justify-between">
+      <div>
+        <h2 className="text-2xl font-black">Dashboard Premium</h2>
+        <p className="text-zinc-400 text-sm mt-1">
+          Selamat datang di Setor Gmail
+        </p>
+      </div>
 
-nav{
-display:flex;
-gap:25px;
-}
+      <div className="flex items-center gap-4">
+        <div className="bg-green-500/20 border border-green-400/20 px-5 py-3 rounded-2xl text-green-400 font-bold">
+          Saldo: Rp 1.250.000
+        </div>
 
-nav a{
-color:#ddd;
-text-decoration:none;
-font-weight:500;
-transition:0.3s;
-}
+        <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-black font-black text-lg shadow-lg shadow-green-500/30">
+          SG
+        </div>
+      </div>
+    </header>
 
-nav a:hover{
-color:#00ff88;
-}
+    <div className="p-6 md:p-10 space-y-10">
+      {/* Hero */}
+      <section className="bg-gradient-to-r from-green-500/20 to-emerald-400/10 border border-green-400/20 rounded-[32px] p-8 md:p-12 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-72 h-72 bg-green-400/10 blur-3xl rounded-full"></div>
 
-.btn{
-background:#00ff88;
-color:black;
-padding:14px 30px;
-border-radius:16px;
-font-weight:700;
-text-decoration:none;
-transition:0.3s;
-display:inline-block;
-box-shadow:0 0 25px rgba(0,255,136,0.4);
-}
+        <div className="relative z-10 max-w-3xl">
+          <p className="uppercase tracking-[4px] text-green-400 text-sm font-semibold mb-4">
+            Freelance Modern Platform
+          </p>
 
-.btn:hover{
-transform:translateY(-4px) scale(1.03);
-box-shadow:0 0 40px rgba(0,255,136,0.8);
-}
+          <h1 className="text-4xl md:text-6xl font-black leading-tight mb-6">
+            Dashboard <span className="text-green-400">Setor Gmail</span>
+          </h1>
 
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:120px 8% 60px;
-}
+          <p className="text-zinc-300 text-lg leading-relaxed mb-8">
+            Website freelance modern dengan tampilan premium dark neon,
+            fitur saldo user, withdraw, statistik, dan layanan setor Gmail.
+          </p>
 
-.hero-content{
-max-width:900px;
-animation:fadeUp 1s ease;
-}
+          <div className="flex flex-wrap gap-4">
+            <button className="bg-green-500 hover:bg-green-400 transition-all text-black font-bold px-8 py-4 rounded-2xl shadow-xl shadow-green-500/30">
+              Mulai Setor
+            </button>
 
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+            <button className="border border-white/10 hover:border-green-400 hover:text-green-400 transition-all px-8 py-4 rounded-2xl font-semibold text-zinc-300">
+              Lihat Statistik
+            </button>
+          </div>
+        </div>
+      </section>
 
-.badge{
-display:inline-block;
-padding:10px 20px;
-border:1px solid rgba(0,255,136,0.3);
-border-radius:50px;
-background:rgba(0,255,136,0.08);
-color:#00ff88;
-margin-bottom:30px;
-font-size:14px;
-}
+      {/* Stats */}
+      <section className="grid md:grid-cols-4 gap-6">
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-green-400 transition-all">
+          <p className="text-zinc-400 mb-3">Total Saldo</p>
+          <h3 className="text-4xl font-black text-green-400">Rp1.2JT</h3>
+        </div>
 
-.hero h1{
-font-size:82px;
-line-height:1.1;
-font-weight:800;
-margin-bottom:25px;
-}
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-green-400 transition-all">
+          <p className="text-zinc-400 mb-3">Withdraw</p>
+          <h3 className="text-4xl font-black text-green-400">24x</h3>
+        </div>
 
-.hero h1 span{
-color:#00ff88;
-text-shadow:0 0 20px #00ff88;
-}
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-green-400 transition-all">
+          <p className="text-zinc-400 mb-3">Setor Gmail</p>
+          <h3 className="text-4xl font-black text-green-400">152</h3>
+        </div>
 
-.hero p{
-font-size:20px;
-color:#b5b5b5;
-line-height:1.9;
-max-width:750px;
-margin:auto;
-margin-bottom:45px;
-}
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-green-400 transition-all">
+          <p className="text-zinc-400 mb-3">Online</p>
+          <h3 className="text-4xl font-black text-green-400">24/7</h3>
+        </div>
+      </section>
 
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
+      {/* Main Grid */}
+      <section className="grid lg:grid-cols-3 gap-8">
+        {/* Withdraw */}
+        <div className="lg:col-span-2 bg-white/5 border border-white/10 rounded-[32px] p-8 backdrop-blur-xl">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-3xl font-black">Withdraw Balance</h2>
+              <p className="text-zinc-400 mt-2">
+                Tarik saldo langsung ke rekening.
+              </p>
+            </div>
 
-.secondary-btn{
-padding:14px 30px;
-border-radius:16px;
-border:1px solid rgba(255,255,255,0.15);
-color:white;
-text-decoration:none;
-font-weight:600;
-transition:0.3s;
-}
+            <div className="bg-green-500/20 text-green-400 border border-green-400/20 px-4 py-2 rounded-2xl font-semibold">
+              Active
+            </div>
+          </div>
 
-.secondary-btn:hover{
-border-color:#00ff88;
-color:#00ff88;
-}
+          <div className="grid md:grid-cols-2 gap-5 mb-6">
+            <input
+              type="text"
+              placeholder="Nama Bank"
+              className="bg-black/40 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-green-400"
+            />
 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:40px 8% 120px;
-}
+            <input
+              type="text"
+              placeholder="Nomor Rekening"
+              className="bg-black/40 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-green-400"
+            />
+          </div>
 
-.stat-box{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-padding:35px;
-border-radius:28px;
-backdrop-filter:blur(16px);
-transition:0.4s;
-}
+          <input
+            type="text"
+            placeholder="Jumlah Withdraw"
+            className="bg-black/40 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-green-400 w-full mb-6"
+          />
 
-.stat-box:hover{
-transform:translateY(-10px);
-border-color:#00ff88;
-box-shadow:0 0 30px rgba(0,255,136,0.15);
-}
+          <button className="bg-green-500 hover:bg-green-400 transition-all text-black font-black px-8 py-4 rounded-2xl shadow-xl shadow-green-500/30 w-full md:w-auto">
+            Proses Withdraw
+          </button>
+        </div>
 
-.stat-box h2{
-font-size:48px;
-color:#00ff88;
-margin-bottom:10px;
-}
+        {/* Activity */}
+        <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+          <h2 className="text-3xl font-black mb-8">Aktivitas</h2>
 
-.stat-box p{
-color:#aaa;
-line-height:1.7;
-}
+          <div className="space-y-5">
+            <div className="bg-black/40 border border-white/10 rounded-2xl p-5">
+              <p className="text-green-400 font-bold mb-1">+ Rp250.000</p>
+              <p className="text-zinc-400 text-sm">Setor Gmail berhasil</p>
+            </div>
 
-.services{
-padding:40px 8% 120px;
-}
+            <div className="bg-black/40 border border-white/10 rounded-2xl p-5">
+              <p className="text-red-400 font-bold mb-1">- Rp100.000</p>
+              <p className="text-zinc-400 text-sm">Withdraw diproses</p>
+            </div>
 
-.section-title{
-text-align:center;
-margin-bottom:70px;
-}
+            <div className="bg-black/40 border border-white/10 rounded-2xl p-5">
+              <p className="text-green-400 font-bold mb-1">+ Rp500.000</p>
+              <p className="text-zinc-400 text-sm">Bonus transaksi</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-.section-title h2{
-font-size:60px;
-margin-bottom:20px;
-}
+      {/* Gmail Section */}
+      <section className="bg-white/5 border border-white/10 rounded-[32px] p-8 md:p-10">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
+          <div>
+            <h2 className="text-4xl font-black mb-3">
+              Setor Gmail Service
+            </h2>
+            <p className="text-zinc-400 max-w-2xl leading-relaxed">
+              Kelola layanan setor Gmail dengan tampilan modern dan statistik real-time.
+            </p>
+          </div>
 
-.section-title p{
-color:#aaa;
-max-width:700px;
-margin:auto;
-line-height:1.8;
-}
+          <button className="bg-green-500 hover:bg-green-400 transition-all text-black font-black px-8 py-4 rounded-2xl shadow-xl shadow-green-500/30">
+            Tambah Gmail
+          </button>
+        </div>
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-black/40 border border-white/10 rounded-3xl p-6">
+            <h3 className="text-2xl font-black text-green-400 mb-3">50+</h3>
+            <p className="text-zinc-400">Gmail Aktif</p>
+          </div>
 
-.card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-padding:40px;
-border-radius:28px;
-transition:0.4s;
-backdrop-filter:blur(16px);
-position:relative;
-overflow:hidden;
-}
+          <div className="bg-black/40 border border-white/10 rounded-3xl p-6">
+            <h3 className="text-2xl font-black text-green-400 mb-3">98%</h3>
+            <p className="text-zinc-400">Success Rate</p>
+          </div>
 
-.card::before{
-content:'';
-position:absolute;
-width:120px;
-height:120px;
-background:#00ff8830;
-border-radius:50%;
-top:-40px;
-right:-40px;
-filter:blur(20px);
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:#00ff88;
-box-shadow:0 0 30px rgba(0,255,136,0.18);
-}
-
-.card h3{
-font-size:28px;
-margin-bottom:20px;
-}
-
-.card p{
-color:#aaa;
-line-height:1.8;
-}
-
-.cta{
-padding:0 8% 120px;
-}
-
-.cta-box{
-padding:70px;
-border-radius:35px;
-background:linear-gradient(135deg,#00ff8820,#00ffcc10);
-border:1px solid rgba(0,255,136,0.2);
-text-align:center;
-backdrop-filter:blur(20px);
-}
-
-.cta-box h2{
-font-size:58px;
-margin-bottom:25px;
-}
-
-.cta-box p{
-color:#aaa;
-font-size:18px;
-line-height:1.8;
-margin-bottom:40px;
-}
-
-footer{
-padding:40px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,0.08);
-color:#777;
-}
-
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-width:70px;
-height:70px;
-background:#00ff88;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:32px;
-text-decoration:none;
-color:black;
-box-shadow:0 0 25px rgba(0,255,136,0.6);
-z-index:999;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.08);}
-100%{transform:scale(1);}
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:52px;
-}
-
-.section-title h2,
-.cta-box h2{
-font-size:38px;
-}
-
-header{
-padding:18px 5%;
-}
-
-nav{
-display:none;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">Setor Gmail</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
-</nav>
-
-<a href="https://wa.me/628137901248" class="btn">
-WhatsApp
-</a>
-
-</header>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<div class="badge">
-🚀 Freelance Digital Premium
+          <div className="bg-black/40 border border-white/10 rounded-3xl p-6">
+            <h3 className="text-2xl font-black text-green-400 mb-3">24/7</h3>
+            <p className="text-zinc-400">Live Support</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
 </div>
 
-<h1>
-Modern Website <br>
-<span>Setor Gmail</span>
-</h1>
-
-<p>
-Platform freelance modern dengan tampilan premium dark neon,
-responsif, fast response, dan siap melayani setiap hari.
-</p>
-
-<div class="hero-buttons">
-
-<a href="https://wa.me/628137901248" class="btn">
-Mulai Sekarang
-</a>
-
-<a href="#services" class="secondary-btn">
-Lihat Layanan
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="stats">
-
-<div class="stat-box">
-<h2>24/7</h2>
-<p>Online support setiap hari.</p>
-</div>
-
-<div class="stat-box">
-<h2>Fast</h2>
-<p>Pelayanan cepat dan responsif.</p>
-</div>
-
-<div class="stat-box">
-<h2>Premium</h2>
-<p>Desain modern dan elegan.</p>
-</div>
-
-<div class="stat-box">
-<h2>Trusted</h2>
-<p>Tampilan profesional terpercaya.</p>
-</div>
-
-</section>
-
-<section class="services" id="services">
-
-<div class="section-title">
-<h2>Layanan Premium</h2>
-<p>
-Website freelance modern dengan desain startup premium dark neon.
-</p>
-</div>
-
-<div class="cards">
-
-<div class="card">
-<h3>⚡ Fast Response</h3>
-<p>
-Respon cepat dan pelayanan aktif setiap hari.
-</p>
-</div>
-
-<div class="card">
-<h3>🛡 Trusted Service</h3>
-<p>
-Desain profesional dan nyaman digunakan.
-</p>
-</div>
-
-<div class="card">
-<h3>🚀 Premium UI</h3>
-<p>
-Dark neon modern seperti website startup premium.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="cta">
-
-<div class="cta-box">
-
-<h2>Hubungi Sekarang</h2>
-
-<p>
-Klik tombol WhatsApp dibawah untuk informasi lebih lanjut.
-</p>
-
-<a href="https://wa.me/628137901248" class="btn">
-Chat WhatsApp
-</a>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 Setor Gmail — Premium Website
-</footer>
-
-<a href="https://wa.me/628137901248" class="whatsapp">
-✆
-</a>
-
-</body>
-</html>
+) }
